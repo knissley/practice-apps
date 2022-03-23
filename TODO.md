@@ -1,0 +1,1 @@
+-- Case sensitivity issues when adding a word. Allows duplicates to be added if the casing is different.
