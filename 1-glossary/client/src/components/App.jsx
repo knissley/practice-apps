@@ -16,6 +16,7 @@ class App extends React.Component {
     this.handleWordCreation = this.handleWordCreation.bind(this);
     this.handleDefinitionChange = this.handleDefinitionChange.bind(this);
     this.handleWordDeletion = this.handleWordDeletion.bind(this);
+    this.handleWordSearch = this.handleWordSearch.bind(this);
   }
 
   componentDidMount() {
@@ -66,6 +67,14 @@ class App extends React.Component {
     })
   }
 
+  handleWordSearch(query) {
+    axios.get(`/api/words/search?query=${query}`).then( (res) => {
+      this.setState({
+        words: res.data
+      })
+    })
+  }
+
 
   render() {
 
@@ -73,7 +82,7 @@ class App extends React.Component {
     return (
       <div>
         <h1>Kyle's Glossary</h1>
-        <GlossaryInputField handleWordCreation={this.handleWordCreation} error={this.state.errorAddingWord} />
+        <GlossaryInputField handleWordCreation={this.handleWordCreation} error={this.state.errorAddingWord} handleWordSearch={this.handleWordSearch}/>
         <GlossaryList words={this.state.words} handleDefinitionChange={this.handleDefinitionChange} handleWordDeletion={this.handleWordDeletion} />
       </div>
     )

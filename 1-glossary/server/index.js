@@ -16,5 +16,7 @@ app.post('/api/words', controllers.words.post);
 app.patch('/api/words', controllers.words.patch);
 app.delete('/api/words', controllers.words.delete);
 
+app.get('/api/words/search', controllers.words.search);
+
 app.listen(port);
 console.log(`Listening at http://localhost:${port}`);

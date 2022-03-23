@@ -48,5 +48,17 @@ module.exports = {
         res.sendStatus(200);
       }
     })
+  },
+
+  search: (req, res) => {
+    const query = req.query.query;
+
+    models.words.findWords(query, (err, results) => {
+      if (err) {
+        res.sendStatus(404);
+      } else {
+        res.send(results);
+      }
+    })
   }
 }

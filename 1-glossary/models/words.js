@@ -41,5 +41,16 @@ module.exports = {
         callback(null);
       }
     })
+  },
+
+  findWords: (query, callback) => {
+    const regex = new RegExp(query, 'i');
+    db.Words.find({word: {$regex: regex}}, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    })
   }
 }

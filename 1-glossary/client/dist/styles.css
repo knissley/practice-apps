@@ -55,6 +55,7 @@ h6 {
 
 h1 {
   font-size: 4rem;
+  text-align: center;
 }
 
 main {
@@ -131,4 +132,8 @@ input {
 .error-msg {
   font-weight: bold;
   color: red;
+}
+
+.word-input-box {
+  margin-bottom: 2em;
 }
