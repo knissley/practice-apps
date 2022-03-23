@@ -1,10 +1,10 @@
 /**
- * 
+ *
  * Based on Josh Comeau's CSS Reset: https://www.joshwcomeau.com/css/custom-css-reset/.
- * 
+ *
  * Feel free to edit this file as needed.
- * 
- */ 
+ *
+ */
 
 *,
 *::before,
@@ -53,8 +53,75 @@ h6 {
   overflow-wrap: break-word;
 }
 
+h1 {
+  font-size: 4rem;
+}
+
 main {
   max-width: 840px;
   padding: 16px;
   margin: auto;
+}
+
+body {
+  background-color: rgb(24, 24, 24);
+  color: rgb(232, 232, 232);
+}
+
+input {
+  border-radius: 5px;
+}
+
+button {
+  padding: .25em .5em;
+  outline: none;
+  border-radius: 5px;
+  background-color: rgb(116, 116, 116);
+  color: rgb(232, 232, 232);
+  font-weight: bold;
+  border: 1px solid rgb(232, 232, 232);
+  margin-right: .5em;
+  transition: background-color .5s ease;
+  font-size: .75rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: black;
+}
+
+.word-entry {
+  margin-top: 2em;
+}
+
+.word-title {
+  text-transform: uppercase;
+  font-size: 2.25rem;
+}
+
+.word-definition {
+  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 1.25rem;
+}
+
+.item-edit-box {
+  background-color: black;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.item-edit-box label {
+  font-weight: bold;
+}
+
+.item-edit-box-field {
+  width: 100%;
+  margin: 1em 0;
+}
+
+.error-msg {
+  font-weight: bold;
+  color: red;
 }

@@ -27,6 +27,12 @@ class GlossaryInputField extends React.Component {
 
   render() {
 
+    let errorMsg;
+
+    if (this.props.error) {
+      errorMsg = <p className="error-msg">That word is already in the glossary.</p>
+    }
+
 
     return(
       <div>
@@ -43,8 +49,9 @@ class GlossaryInputField extends React.Component {
             name="definition" value={`${this.state.definitionInput}`}
             onChange={ (e) => this.setState({ definitionInput: e.target.value}) }>
           </input><br/>
-          <input type="submit" onClick={this.handleSubmit}></input>
+          <input type="submit" onClick={this.handleSubmit} value="Add New Word"></input>
         </form>
+        {errorMsg}
     </div>
     )
   }

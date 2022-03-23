@@ -37,5 +37,16 @@ module.exports = {
         res.sendStatus(200);
       }
     })
+  },
+
+  delete: (req, res) => {
+    const wordToDelete = req.body.word;
+    models.words.removeWord(wordToDelete, (err) => {
+      if (err) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(200);
+      }
+    })
   }
 }

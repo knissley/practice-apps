@@ -12,9 +12,7 @@ module.exports = {
   },
 
   create: (word, definition, callback) => {
-    console.log('right before .create');
     db.Words.create({word: word, definition: definition}, (err) => {
-      console.log('err within .create: ', err);
       if (err) {
         callback(err);
       } else {
@@ -26,7 +24,17 @@ module.exports = {
   update: (wordToChange, newDefinition, callback) => {
     console.log('within models.words.update');
     const query = {word: wordToChange};
-    db.Words.update(query, {definition: newDefinition}, (err) => {
+    db.Words.updateOne(query, {definition: newDefinition}, (err) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null);
+      }
+    })
+  },
+
+  removeWord: (wordToDelete, callback) => {
+    db.Words.deleteOne({word: wordToDelete}, (err) => {
       if (err) {
         callback(err);
       } else {
