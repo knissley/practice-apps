@@ -1,13 +1,16 @@
 import react from 'react';
 
 const GlossaryItem = ({word}) => {
-  console.log('word within glossaryItem: ', word);
 
 
   return(
     <div>
-      <h2>{word.word}</h2>
-      <p>{word.definition}</p>
+      <h2 className="word-title">{word.word}</h2>
+      <p className="word-definition">{word.definition}</p>
+      <div>
+        <button className="word-edit-btn">EDIT</button>
+        <button className="word-delete-btn">DELETE</button>
+      </div>
     </div>
   )
 };

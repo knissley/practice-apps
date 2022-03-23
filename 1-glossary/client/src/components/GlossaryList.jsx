@@ -4,8 +4,6 @@ import GlossaryItem from './GlossaryItem.jsx';
 
 const GlossaryList = ({words}) => {
 
-  console.log(words);
-
   return(
     <div>
       {words.map( (word, i) => {
