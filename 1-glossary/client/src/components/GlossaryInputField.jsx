@@ -33,12 +33,14 @@ class GlossaryInputField extends React.Component {
         <form>
           <label htmlFor="word">Word:</label><br />
           <input
-            type="text" id="word" name="word"
+            type="text" id="word"
+            name="word" value={`${this.state.wordInput}`}
             onChange={ (e) =>  this.setState({ wordInput: e.target.value}) }>
           </input><br/>
           <label htmlFor="definition">Definition:</label><br />
           <input
-            type="text" id="definition" name="definition"
+            type="text" id="definition"
+            name="definition" value={`${this.state.definitionInput}`}
             onChange={ (e) => this.setState({ definitionInput: e.target.value}) }>
           </input><br/>
           <input type="submit" onClick={this.handleSubmit}></input>
