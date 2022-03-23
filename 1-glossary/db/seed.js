@@ -13,6 +13,18 @@ const arr = [
   {
     word: 'unit',
     definition: 'a definite magnitude of quantity'
+  },
+  {
+    word: 'hacker',
+    definition: 'a graduate of Hack Reactor'
+  },
+  {
+    word: 'jQuery',
+    definition: 'an old, outdated library'
+  },
+  {
+    word: 'axios',
+    definition: 'greatest thing since sliced bread'
   }
 ]
 

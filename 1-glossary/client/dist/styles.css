@@ -72,22 +72,29 @@ input {
   border-radius: 5px;
 }
 
-button {
+button,
+input[type=submit] {
   padding: .25em .5em;
   outline: none;
   border-radius: 5px;
-  background-color: rgb(116, 116, 116);
+  background-color: rgb(63, 63, 63);
   color: rgb(232, 232, 232);
   font-weight: bold;
   border: 1px solid rgb(232, 232, 232);
   margin-right: .5em;
-  transition: background-color .5s ease;
+  transition: background-color .25s ease;
   font-size: .75rem;
 }
 
-button:hover {
+button:hover,
+input[type=submit]:hover {
   cursor: pointer;
   background-color: black;
+}
+
+input {
+  width: 100%;
+  margin-bottom: .5em;
 }
 
 .word-entry {
