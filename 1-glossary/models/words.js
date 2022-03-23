@@ -21,5 +21,17 @@ module.exports = {
         callback(null);
       }
     })
+  },
+
+  update: (wordToChange, newDefinition, callback) => {
+    console.log('within models.words.update');
+    const query = {word: wordToChange};
+    db.Words.update(query, {definition: newDefinition}, (err) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null);
+      }
+    })
   }
 }

@@ -15,7 +15,6 @@ module.exports = {
   },
 
   post: (req, res) => {
-    console.log('req body is: ', req.body);
     const word = req.body.word;
     const definition = req.body.definition;
     models.words.create(word, definition, (err) => {
@@ -23,6 +22,19 @@ module.exports = {
         res.sendStatus(404);
       } else {
         res.sendStatus(201);
+      }
+    })
+  },
+
+  patch: (req, res) => {
+    console.log('in patch');
+    const wordToChange = req.body.word;
+    const newDefinition = req.body.newDefinition;
+    models.words.update(wordToChange, newDefinition, (err) => {
+      if (err) {
+        res.sendStatus(404);
+      } else {
+        res.sendStatus(200);
       }
     })
   }

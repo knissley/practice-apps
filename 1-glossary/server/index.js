@@ -13,6 +13,7 @@ app.use(express.json());
 
 app.get('/api/words', controllers.words.get);
 app.post('/api/words', controllers.words.post);
+app.patch('/api/words', controllers.words.patch);
 
 app.listen(port);
 console.log(`Listening at http://localhost:${port}`);

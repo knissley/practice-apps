@@ -8,8 +8,8 @@ const GlossaryItem = ({word}) => {
       <h2 className="word-title">{word.word}</h2>
       <p className="word-definition">{word.definition}</p>
       <div>
-        <button className="word-edit-btn">EDIT</button>
-        <button className="word-delete-btn">DELETE</button>
+        <button className="word-edit-btn">Edit</button>
+        <button className="word-delete-btn">Delete</button>
       </div>
     </div>
   )
