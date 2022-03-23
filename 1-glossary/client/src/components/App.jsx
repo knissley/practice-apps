@@ -28,23 +28,27 @@ class App extends React.Component {
   }
 
   handleWordCreation(word, definition) {
-    const newWord = {
-      word: word,
-      definition: definition
-    };
+    if (word === '' || definition === '') {
+      this.setState({ errorAddingWord: true});
+    } else {
+      const newWord = {
+        word: word,
+        definition: definition
+      };
 
-    axios.post('/api/words', newWord).then( () => {
-      axios('/api/words').then( (res) => {
+      axios.post('/api/words', newWord).then( () => {
+        axios('/api/words').then( (res) => {
+          this.setState({
+            words: res.data,
+            errorAddingWord: false
+          })
+        })
+      }).catch( (res) => {
         this.setState({
-          words: res.data,
-          errorAddingWord: false
+          errorAddingWord: true
         })
       })
-    }).catch( (res) => {
-      this.setState({
-        errorAddingWord: true
-      })
-    })
+    }
   }
 
   handleDefinitionChange(wordToEdit, newDefinition) {

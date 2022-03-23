@@ -40,7 +40,7 @@ class GlossaryInputField extends React.Component {
     let errorMsg;
 
     if (this.props.error) {
-      errorMsg = <p className="error-msg">That word is already in the glossary.</p>
+      errorMsg = <p className="error-msg">That word is invalid.</p>
     }
 
 
