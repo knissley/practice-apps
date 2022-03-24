@@ -70,7 +70,6 @@ module.exports = {
 
     db.Words.find({}).skip(skipAmount).limit(10)
     .exec( (err, results) => {
-      console.log('words found: ', results.length);
       if(err) {
         console.log(err);
         callback(err);

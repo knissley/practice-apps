@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    axios(`/api/words?page=${this.state.currentPage}&limit=${this.state.pageLimit}`)
+    axios(`/api/words/page?page=${this.state.currentPage}&limit=${this.state.pageLimit}`)
     .then ((res) => {
       console.log(res.data);
       this.setState({
@@ -95,7 +95,7 @@ class App extends React.Component {
     if (action === 'increment') {
       //move the page forward and get the data for the next page, setting the state of the data and new page number
       let queryPage = currentPage + 1;
-      axios(`/api/words?page=${queryPage}&limit=${this.state.pageLimit}`).then( (res) => {
+      axios(`/api/words/page?page=${queryPage}&limit=${this.state.pageLimit}`).then( (res) => {
         const words = res.data.words;
         const wordTotal = res.data.count;
         this.setState({
@@ -108,7 +108,7 @@ class App extends React.Component {
     } else if (action === 'decrement' && currentPage !== 1) {
       //move the page backward and get the data for the next page, setting the state of the data and new page number
       let queryPage = currentPage - 1;
-      axios(`/api/words?page=${queryPage}&limit=${this.state.pageLimit}`).then( (res) => {
+      axios(`/api/words/page?page=${queryPage}&limit=${this.state.pageLimit}`).then( (res) => {
         const words = res.data.words;
         const wordTotal = res.data.count;
         this.setState({

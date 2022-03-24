@@ -17,3 +17,7 @@
   --sort the query alphabetically
   --introduct the limit and page number
   --find a way to "chunk" the query to only send back the relevant section of words from within the database table
+
+
+
+  --Reset button refreshes the page?
