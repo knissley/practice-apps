@@ -27,7 +27,6 @@ module.exports = {
   },
 
   patch: (req, res) => {
-    console.log('in patch');
     const wordToChange = req.body.word;
     const newDefinition = req.body.newDefinition;
     models.words.update(wordToChange, newDefinition, (err) => {
@@ -60,5 +59,32 @@ module.exports = {
         res.send(results);
       }
     })
+  },
+
+  getByPage: (req, res) => {
+    const page = req.query.page;
+    const pageLimit = req.query.limit;
+
+    models.words.getByPage(page, pageLimit, (err, results) => {
+      const words = results;
+      console.log(words);
+      if (err) {
+        res.sendStatus(404);
+      } else {
+        db.Words.countDocuments({}, (err, count) => {
+          if (err) {
+            console.log(err);
+            res.sendStatus(404);
+          } else {
+            const data = {
+              words: results,
+              count: count
+            }
+            res.send(data);
+          }
+        })
+      }
+    })
+
   }
 }

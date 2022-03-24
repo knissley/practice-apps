@@ -23,6 +23,26 @@ const arr = [
     definition: 'an old, outdated library'
   },
   {
+    word: 'carpet',
+    definition: 'a floor or stair covering made from thick woven fabric'
+  },
+  {
+    word: 'plaintiff',
+    definition: 'a person who brings a case against another in a court of law'
+  },
+  {
+    word: 'illustrate',
+    definition: 'explain or make something clear by using images'
+  },
+  {
+    word: 'world',
+    definition: 'the earth, together with all of its countries, peoples, and natural features'
+  },
+  {
+    word: 'chauvinist',
+    definition: 'a person displaying aggressive or exaggerated patriotism'
+  },
+  {
     word: 'axios',
     definition: 'greatest thing since sliced bread'
   }

@@ -106,10 +106,12 @@ input[type=text] {
 
 .word-entry {
   margin-top: 2em;
+  border-bottom: 1px solid grey;
+  padding-bottom: 1em;
 }
 
 .word-title {
-  text-transform: uppercase;
+  text-transform: capitalize;
   font-size: 2.25rem;
 }
 
@@ -145,7 +147,7 @@ input[type=text] {
 }
 
 .nav-bar {
-  margin-top: 1em;
+  margin-top: 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;

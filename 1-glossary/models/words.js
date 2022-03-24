@@ -22,7 +22,6 @@ module.exports = {
   },
 
   update: (wordToChange, newDefinition, callback) => {
-    console.log('within models.words.update');
     const query = {word: wordToChange};
     db.Words.updateOne(query, {definition: newDefinition}, (err) => {
       if (err) {
@@ -50,6 +49,33 @@ module.exports = {
         callback(err);
       } else {
         callback(null, results);
+      }
+    })
+  },
+
+  getByPage: (page, pageLimit, callback) => {
+    //there was a fields parameter here before skip
+    page = page - 1;
+
+
+    // db.Words.find({}, {skip: pageLimit * page, limit: pageLimit}, (err, results) => {
+    //   if (err) {
+    //     console.log('error in get by page: ', err);
+    //     callback(err);
+    //   } else {
+    //     callback(null, results)
+    //   }
+    // })
+
+    db.Words.find({})
+    .skip(pageLimit * page)
+    .limit(pageLimit)
+    .exec( (err, results) => {
+      if(err) {
+        console.log(err);
+        callback(err);
+      } else {
+        callback(err, results);
       }
     })
   }
