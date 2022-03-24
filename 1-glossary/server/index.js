@@ -12,6 +12,7 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 
 // app.get('/api/words', controllers.words.get);
+
 app.get('/api/words', controllers.words.getByPage);
 app.post('/api/words', controllers.words.post);
 app.patch('/api/words', controllers.words.patch);

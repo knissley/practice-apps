@@ -26,13 +26,9 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // axios('/api/words').then((res) => {
-    //   this.setState({
-    //     words: res.data
-    //   })
-    // })
     axios(`/api/words?page=${this.state.currentPage}&limit=${this.state.pageLimit}`)
     .then ((res) => {
+      console.log(res.data);
       this.setState({
         words: res.data.words,
         wordTotal: res.data.count

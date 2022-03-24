@@ -43,8 +43,48 @@ const arr = [
     definition: 'a person displaying aggressive or exaggerated patriotism'
   },
   {
+    word: 'filter',
+    definition: 'show or hide something based on parameters'
+  },
+  {
+    word: 'visible',
+    definition: 'the fact that something can be seen'
+  },
+  {
     word: 'axios',
     definition: 'greatest thing since sliced bread'
+  },
+  {
+    word: 'hero',
+    definition: 'someone who does good for others'
+  },
+  {
+    word: 'deteriorate',
+    definition: 'greatest thing since sliced bread'
+  },
+  {
+    word: 'button',
+    definition: 'press it!'
+  },
+  {
+    word: 'order',
+    definition: 'the way things are'
+  },
+  {
+    word: 'cat',
+    definition: 'opposite of a dog'
+  },
+  {
+    word: 'regret',
+    definition: 'something you wish you didn\'t do'
+  },
+  {
+    word: 'suggest',
+    definition: 'give your opinion'
+  },
+  {
+    word: 'read',
+    definition: 'look at and comprehend the meaning of written material'
   }
 ]
 

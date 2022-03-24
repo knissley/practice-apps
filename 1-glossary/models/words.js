@@ -66,11 +66,11 @@ module.exports = {
     //     callback(null, results)
     //   }
     // })
+    let skipAmount = page * pageLimit;
 
-    db.Words.find({})
-    .skip(pageLimit * page)
-    .limit(pageLimit)
+    db.Words.find({}).skip(skipAmount).limit(10)
     .exec( (err, results) => {
+      console.log('words found: ', results.length);
       if(err) {
         console.log(err);
         callback(err);

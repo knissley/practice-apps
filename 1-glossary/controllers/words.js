@@ -67,7 +67,7 @@ module.exports = {
 
     models.words.getByPage(page, pageLimit, (err, results) => {
       const words = results;
-      console.log(words);
+      // console.log(words);
       if (err) {
         res.sendStatus(404);
       } else {
