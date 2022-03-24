@@ -81,10 +81,11 @@ input[type=submit] {
   background-color: rgb(63, 63, 63);
   color: rgb(232, 232, 232);
   font-weight: bold;
-  border: 1px solid rgb(232, 232, 232);
+  border: 2px solid rgb(232, 232, 232);
   margin-right: .5em;
   transition: background-color .25s ease;
   font-size: .75rem;
+  /* box-shadow: 1px 1px 1px white; */
 }
 
 button:hover,
@@ -96,6 +97,10 @@ input[type=submit]:hover {
 input {
   width: 100%;
   margin-bottom: .5em;
+}
+
+input[type=text] {
+  padding-left: .5em;
 }
 
 
@@ -137,4 +142,26 @@ input {
 
 .word-input-box {
   margin-bottom: 2em;
+}
+
+.nav-bar {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-button-container {
+  margin-top: .5em;
+  display: flex;
+  justify-content: right;
+}
+
+.text-accent {
+  font-weight: bold;
 }

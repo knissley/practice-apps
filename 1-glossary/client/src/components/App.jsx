@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import GlossaryList from './GlossaryList.jsx';
 import GlossaryInputField from './GlossaryInputField.jsx';
+import GlossaryNavigation from './GlossaryNavigation.jsx';
 
 
 class App extends React.Component {
@@ -9,8 +10,11 @@ class App extends React.Component {
     super(props);
     this.state = {
       words: [],
-      errorAddingWord: false
+      errorAddingWord: false,
+      currentPage: 1,
+      pageLimit: 10
     }
+    //should currentPage start at 1 or 0?
 
     //bind functions here
     this.handleWordCreation = this.handleWordCreation.bind(this);
@@ -25,6 +29,7 @@ class App extends React.Component {
         words: res.data
       })
     })
+    //axios(`/api/words?page=${this.state.currentPage}&limit=${this.state.pageLimit}`)
   }
 
   handleWordCreation(word, definition) {
@@ -87,6 +92,7 @@ class App extends React.Component {
       <div>
         <h1>Kyle's Glossary</h1>
         <GlossaryInputField handleWordCreation={this.handleWordCreation} error={this.state.errorAddingWord} handleWordSearch={this.handleWordSearch}/>
+        <GlossaryNavigation />
         <GlossaryList words={this.state.words} handleDefinitionChange={this.handleDefinitionChange} handleWordDeletion={this.handleWordDeletion} />
       </div>
     )
