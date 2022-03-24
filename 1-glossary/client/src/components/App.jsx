@@ -83,7 +83,8 @@ class App extends React.Component {
   handleWordSearch(query) {
     axios.get(`/api/words/search?query=${query}`).then( (res) => {
       this.setState({
-        words: res.data
+        words: res.data,
+        currentPage: 1
       })
     })
   }
